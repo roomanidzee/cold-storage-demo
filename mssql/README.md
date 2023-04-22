@@ -1,13 +1,13 @@
 # Setup Information
 
-For launch of SQL Server 2019 Instance with test data, please, run following commands:
+For launch of SQL Server 2019 Instance with test data, please, run following commands in the root directory of repository:
 
 ```bash
 
 docker pull mcr.microsoft.com/mssql/server:2019-latest
-docker-compose up -d
+docker-compose up -d mssql
 docker exec -it mssql_db mkdir /usr/sqlsetup
-docker cp setup.sql mssql_db:/usr/sqlsetup/setup.sql
+docker cp mssql/setup.sql mssql_db:/usr/sqlsetup/setup.sql
 docker exec -it mssql_db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Qwerty1234 -d master -i /usr/sqlsetup/setup.sql
 
 ```
