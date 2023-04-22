@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+   mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 1435:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Qwerty1234
+    container_name: mssql_db
