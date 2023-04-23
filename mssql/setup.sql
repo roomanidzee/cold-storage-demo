@@ -2,7 +2,14 @@ CREATE DATABASE DemoData;
 GO
 USE DemoData;
 GO
-CREATE TABLE UsersInfo (ID int, SecondName nvarchar(max), FirstName nvarchar(max), Email nvarchar(max), JobType nvarchar(max));
+CREATE TABLE UsersInfo (
+    ID int,
+    SecondName nvarchar(max),
+    FirstName nvarchar(max), 
+    Email nvarchar(max), 
+    JobType nvarchar(max),
+    RecordCreationTime datetime2 DEFAULT (Getdate()+ (ABS(CHECKSUM(NewId())) % 3))
+);
 GO
 Insert into UsersInfo(ID, SecondName, FirstName, Email, JobType) 
 Values (1, 'Grier', 'Mike', 'Grier.Mike@yopmail.com', 'developer');
