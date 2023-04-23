@@ -8,4 +8,4 @@ docker-compose up -d hadoop-node
 
 ```
 
-Related queries for Hadoop and Trino are located in ```sql_scripts/hdfs_queries.sql```
+Related queries for Hadoop and Trino are located in ```trino/sql_scripts/hdfs_queries.sql```
