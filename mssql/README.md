@@ -6,6 +6,7 @@ For launch of SQL Server 2019 Instance with test data, please, run following com
 
 docker pull mcr.microsoft.com/mssql/server:2019-latest
 docker-compose up -d mssql
+docker logs -f mssql_db #check if there are no problems in launch
 docker exec -it mssql_db mkdir /usr/sqlsetup
 docker cp mssql/setup.sql mssql_db:/usr/sqlsetup/setup.sql
 docker exec -it mssql_db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Qwerty1234 -d master -i /usr/sqlsetup/setup.sql
