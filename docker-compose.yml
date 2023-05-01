@@ -11,7 +11,7 @@ services:
     container_name: mssql_db
 
    hadoop-node:
-    image: 'ghcr.io/trinodb/testing/hive3.1-hive:latest'
+    image: 'ghcr.io/trinodb/testing/hive3.1-hive:79'
     hostname: hadoop-node
     container_name: hadoop-node
     ports:
