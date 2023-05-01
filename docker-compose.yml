@@ -23,13 +23,14 @@ services:
     volumes:
       - ./hadoop/conf/core-site.xml:/etc/hadoop/conf/core-site.xml:ro  
 
-   trino-coordinator:
-    image: 'trinodb/trino:latest'
-    hostname: trino-coordinator
-    container_name: trino-coordinator
+   trino-coordinator-hdfs:
+    image: 'trinodb/trino:414'
+    hostname: trino-coordinator-hdfs
+    container_name: trino-coordinator-hdfs
     ports:
       - '8080:8080'
     volumes:
       - ./trino/etc:/etc/trino
+      - ./trino/catalog_hdfs:/etc/trino/catalog
       - ./hadoop/conf/core-site.xml:/etc/hadoop/conf/core-site.xml:ro
       - ./hadoop/conf/hdfs-site.xml:/etc/hadoop/conf/hdfs-site.xml:ro
